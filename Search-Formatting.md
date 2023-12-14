@@ -1,12 +1,6 @@
-
-
-
-
-
-
 # Time
 ### Formatting Time To A Human Format
-- **_time** is ugly (ex. 2023-12-13 16:48:13.554)\
+- **_time** is ugly (ex. 2023-12-13 16:48:13.554)
 - This converts that into a more readable format (12-13-2023 4:48PM)
 ```
 | convert timeformat="%m-%d-%Y %l:%M %p" ctime(_time) AS Time
@@ -42,5 +36,6 @@
     true(), "Unknown"
 )
 ```
-- In this example, EventCode is being "Translated" into a more readable format, where it displays "Success" or "Failed" based on the code EventCode normally returns
+- In this example, EventCode is being "translated" into a more readable format, where it displays "Success" or "Failed" based on the code EventCode normally returns
+
 
