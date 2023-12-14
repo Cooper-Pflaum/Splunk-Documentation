@@ -20,7 +20,7 @@
 # Columns
 ### Renaming
 - Rename the Column Titles by using the **rename** command
-    NOTE: If you want multi-word names then include "" around your words
+    NOTE: If you want multi-word names then include " " around your words
 ```
 | rename deviceName AS "Device Name"
 | rename eventData.ssid AS SSID
@@ -29,3 +29,18 @@
 ```
 | table "Device Name" SSID _time
 ```
+
+
+# Searching
+### Reformmating Search Results
+- The best way to change results into a format that you want is to use the ```eval``` command
+```
+| eval EventCode=case(
+    EventCode="4954", "Success",
+    EventCode="6144", "Success",
+    EventCode="6145", "Failed",    
+    true(), "Unknown"
+)
+```
+- In this example, EventCode is being "Translated" into a more readable format, where it displays "Success" or "Failed" based on the code EventCode normally returns
+
