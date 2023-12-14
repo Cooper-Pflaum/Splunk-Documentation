@@ -12,7 +12,7 @@
 | convert timeformat="%m-%d-%Y %l:%M %p" ctime(_time) AS Time
 ```
 
-### Sorts by most recent first
+### Sort by most recent first
 ```
 | sort - _time
 ```
@@ -20,9 +20,11 @@
 # Columns
 - Rename the Column Titles by using the **rename** command
     NOTE: If you want multi-word names then include "" around your words
-- You must use the new term for the rest of the search
 ```
 | rename deviceName AS "Device Name"
 | rename eventData.ssid AS SSID
+```
+- You must use the new term for the rest of the search
+```
 | table "Device Name" SSID _time
 ```
