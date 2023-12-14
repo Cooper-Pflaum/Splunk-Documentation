@@ -18,6 +18,7 @@
 ```
 
 # Columns
+### Renaming
 - Rename the Column Titles by using the **rename** command
     NOTE: If you want multi-word names then include "" around your words
 ```
